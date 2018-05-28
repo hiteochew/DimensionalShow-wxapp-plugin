@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "plugins": {
+    "DimensionalShow": {
+      "version": "1.0.0",
+      "provider": "wx0f253bdf656bfa08"
+    }
+  }
+}
