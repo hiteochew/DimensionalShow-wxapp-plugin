@@ -2,6 +2,10 @@
 
 小程序3d环物展示插件，利用小程序开放的接口模拟简单的3D环物功能。只需传入物品序列照片数组即可。
 
+插件appid：`wx0f253bdf656bfa08`
+
+版本：`v1.0.0`
+
 # 使用方法
 
 1、微信小程序后台搜索`3D环物展示`添加插件
@@ -63,3 +67,6 @@ autoplay | Boolean | false | 否 | 自动播放
 </dimenshow>
 ```
 
+# 小程序演示
+
+![小程序演示](https://raw.githubusercontent.com/hiteochew/DimensionalShow-wxapp-plugin/master/demo.jpg "小程序演示")
