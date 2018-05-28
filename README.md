@@ -6,6 +6,8 @@
 
 版本：`v1.0.0`
 
+微信插件地址：https://mp.weixin.qq.com/wxopen/pluginbasicprofile?action=intro&appid=wx0f253bdf656bfa08&token=1772901724&lang=zh_CN
+
 # 使用方法
 
 1、微信小程序后台搜索`3D环物展示`添加插件
