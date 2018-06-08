@@ -139,7 +139,7 @@ Tip：`url`为单个地址，无法直接传入照片序列。
 
 文件名可随意设置，但顺序就需要严格。
 
-![fileList](list.jpg)
+![fileList](https://raw.githubusercontent.com/hiteochew/DimensionalShow-wxapp-plugin/master/list.jpg)
 
 ```
 [
