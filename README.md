@@ -43,7 +43,7 @@
 
 由于微信官方规定，downloadFile安全域名需要在插件内设置，所以这里建议大家先在小程序端**设置安全域名**后使用**downloadFile**下载图片序列，再把得到的本地缓存地址集传入插件。
 
-Tip：插件内部已提供支持**Promise**的**downloadFile(url)**接口，可直接使用。
+Tip：下方代码已提供支持**Promise**的`downloadFile(src)`接口，可直接使用。
 
 ```
 //引入插件
@@ -61,11 +61,29 @@ Page({
     ]
   },
 
+  downloadFile: function (src){
+    return new Promise((resolve, reject) => {
+      wx.downloadFile({
+        url: src,
+        success(res) {
+          if (res.statusCode === 200) {
+            resolve(res.tempFilePath);
+          } else {
+            reject({ statusCode, errMsg });
+          }
+        },
+        fail(err) {
+          reject(err);
+        }
+      });
+    })
+  },
+
   onLoad: function () {
     let funtmp, profun = [], that = this
     
     this.data.picsWeblink.forEach((imageurl, index, array) => {
-      funtmp = plugin.downloadFile(imageurl)
+      funtmp = that.downloadFile(imageurl)
       profun.push(
         funtmp.then((src) => {
           return src
@@ -108,19 +126,7 @@ autoplay | Boolean | false | 否 | 自动播放
 
 # 插件接口
 
-使用接口前先`const DimenPlugin = requirePlugin("DimensionalShow")` (变量名自行命名~~)
-
-## downloadFile(url)
-
-在微信官方的基础上加上Promise支持，返回是Promise。
-
-**参数说明：**
-
-参数名 | 类型 | 必填 | 说明
----|---|---|---
-url | String | 是 | 照片的网络地址
-
-Tip：`url`为单个地址，无法直接传入照片序列。
+使用接口前先`const DimenPlugin = requirePlugin("DimensionalShow")` (变量名自行命名\~~)
 
 ## getImageInfo(url)
 
