@@ -27,11 +27,29 @@ Page({
     ]
   },
 
+   downloadFile: function (src){
+    return new Promise((resolve, reject) => {
+      wx.downloadFile({
+        url: src,
+        success(res) {
+          if (res.statusCode === 200) {
+            resolve(res.tempFilePath);
+          } else {
+            reject({ statusCode, errMsg });
+          }
+        },
+        fail(err) {
+          reject(err);
+        }
+      });
+    })
+  }, 
+  
   onLoad: function () {
     let funtmp, profun = [], that = this
     
     this.data.picsWeblink.forEach((imageurl, index, array) => {
-      funtmp = plugin.downloadFile(imageurl)
+      funtmp = that.downloadFile(imageurl)
       profun.push(
         funtmp.then((src) => {
           return src
