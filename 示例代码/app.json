@@ -4,7 +4,7 @@
   ],
   "plugins": {
     "DimensionalShow": {
-      "version": "1.0.0",
+      "version": "1.0.1",
       "provider": "wx0f253bdf656bfa08"
     }
   }
