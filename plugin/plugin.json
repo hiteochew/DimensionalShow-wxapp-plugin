@@ -1,0 +1,6 @@
+{
+  "publicComponents": {
+    "dimenshow": "components/show"
+  },
+  "main": "index.js"
+}

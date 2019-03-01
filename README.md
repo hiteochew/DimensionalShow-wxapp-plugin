@@ -1,16 +1,20 @@
-# 3D环物展示微信小程序插件
+﻿# 3D环物展示微信小程序插件
 
 小程序3d环物展示插件，利用小程序开放的接口模拟简单的3D环物功能。只需传入物品序列照片数组即可。
 
 插件appid：`wx0f253bdf656bfa08`
 
-版本：`v1.0.1`
+
+当前版本 | 调试基础库
+---|---
+1.0.2 | >= 2.4.3 
+
 
 微信插件地址：[插件信息](https://mp.weixin.qq.com/wxopen/pluginbasicprofile?action=intro&appid=wx0f253bdf656bfa08&token=1772901724&lang=zh_CN)
 
 # 使用方法
 
-微信小程序后台搜索`3D环物展示`添加插件
+微信小程序后台搜索`3D环物展示`添加插件，无需等待审核，添加即可使用
 
 ## 1. 小程序配置
 
@@ -19,7 +23,7 @@
 ```
 "plugins": {
   "DimensionalShow": {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "provider": "wx0f253bdf656bfa08"
   }
 }
@@ -43,7 +47,7 @@
 
 由于微信官方规定，downloadFile安全域名需要在插件内设置，所以这里建议大家先在小程序端**设置安全域名**后使用**downloadFile**下载图片序列，再把得到的本地缓存地址集传入插件。
 
-Tip：下方代码已提供支持**Promise**的`downloadFile(src)`接口，可直接使用。
+Tip：下方代码已提供支持**Promise**的**downloadFile(src)**接口，可直接使用。
 
 ```
 //引入插件
@@ -126,7 +130,7 @@ autoplay | Boolean | false | 否 | 自动播放
 
 # 插件接口
 
-使用接口前先`const DimenPlugin = requirePlugin("DimensionalShow")` (变量名自行命名\~~)
+使用接口前先`const DimenPlugin = requirePlugin("DimensionalShow")` (变量名自行命名~~)
 
 ## getImageInfo(url)
 
@@ -136,16 +140,16 @@ autoplay | Boolean | false | 否 | 自动播放
 
 参数名 | 类型 | 必填 | 说明
 ---|---|---|---
-url | String | 是 | 照片的地址，网络地址与缓存地址均可
+url | String | 是 | 照片的地址，本地缓存地址均可
 
-Tip：`url`为单个地址，无法直接传入照片序列。
+Tip：`url`为单个地址，无法直接传入照片序列。由于网络地址安全域名设置在插件开发者端，所以只可使用本地缓存地址。
 
 
 # 示例图片
 
 文件名可随意设置，但顺序就需要严格。
 
-![fileList](https://raw.githubusercontent.com/hiteochew/DimensionalShow-wxapp-plugin/master/list.jpg)
+![fileList](list.jpg)
 
 ```
 [
@@ -180,7 +184,12 @@ Tip：`url`为单个地址，无法直接传入照片序列。
 
 
 # 更新说明
-2018-06-08
+2019-02-02
+
+## 1.0.2
+
+发布时间：2019-2-2
+
 
 ## 1.0.1
 

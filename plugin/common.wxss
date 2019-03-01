@@ -1,0 +1,80 @@
+:host {
+}
+
+.hiteo_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-content: center;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: 0.36s all ease;
+  -moz-transition: 0.36s all ease;
+  -ms-transition: 0.36s all ease;
+  -o-transition: 0.36s all ease;
+  transition: 0.36s all ease;
+  z-index: 0;
+}
+
+.hiteo_container .bgimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(26rpx);
+  background-size: 260%;
+  background-origin: content-box;
+  background-position: center;
+  overflow: hidden;
+  -webkit-transition: 0.36s all ease;
+  -moz-transition: 0.36s all ease;
+  -ms-transition: 0.36s all ease;
+  -o-transition: 0.36s all ease;
+  transition: 0.36s all ease;
+  z-index: -2;
+}
+
+.hiteo_container .PlayerCanvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: -1;
+  -webkit-transition: 0.36s all ease;
+  -moz-transition: 0.36s all ease;
+  -ms-transition: 0.36s all ease;
+  -o-transition: 0.36s all ease;
+  transition: 0.36s all ease;
+}
+
+.hiteo_container .diretion {
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hiteo_container .diretion view {
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+}
+
+.hiteo_container .diretion button {
+  width: 33.3%;
+  float: left;
+}
+
+slot{
+  z-index: 0;
+}

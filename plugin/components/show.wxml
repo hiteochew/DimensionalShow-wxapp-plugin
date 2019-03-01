@@ -1,0 +1,5 @@
+<view class="hiteo_container" style='width:{{xWidth}};height:{{xHeight}};'>
+  <canvas class="PlayerCanvas" canvas-id="DimenPlayerCanvas" disable-scroll="true" bindtouchstart="starttouchmove" bindtouchend="endtouchmove" bindtouchmove="touchmove"></canvas>
+  <view wx:if="{{bgimg}}" class="bgimg" style="background-image:url('{{bgimg}}');"></view>
+</view>
+<slot></slot>
